@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <DataSender @sending-start="started" @sending-complete="completed" />
     <SomeButtons/>
     <h1>{{ msg }}</h1>
     <p>
@@ -33,13 +34,23 @@
 
 <script>
 import SomeButtons from "@/components/SomeButtons";
+import DataSender from "@/components/DataSender";
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
   },
   components:{
-    SomeButtons
+    SomeButtons,
+    DataSender
+  },
+  methods: {
+    started() {
+      console.log('🟢 Started')
+    },
+    completed() {
+      console.log('🏁 Completed')
+    }
   }
 }
 </script>
