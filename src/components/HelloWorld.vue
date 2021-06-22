@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <SomeButtons/>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -31,10 +32,14 @@
 </template>
 
 <script>
+import SomeButtons from "@/components/SomeButtons";
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  components:{
+    SomeButtons
   }
 }
 </script>
